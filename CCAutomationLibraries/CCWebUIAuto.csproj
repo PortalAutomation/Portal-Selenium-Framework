@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D413901-AC9E-4425-983F-9A65E074F930}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PortalSeleniumFramework</RootNamespace>
+    <AssemblyName>PortalSeleniumFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\shared\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\shared\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin.3rdParty\NUnit.2.6.3\bin\framework\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=2.33.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin.3rdParty\selenium-dotnet\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=2.33.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin.3rdParty\selenium-dotnet\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityViewControls\OrganizationEntity.cs" />
+    <Compile Include="EntityViewControls\PersonEntity.cs" />
+    <Compile Include="EntityViewControls\SelectionCdtEntity.cs" />
+    <Compile Include="Helpers\BaseTest.cs" />
+    <Compile Include="Helpers\ClickPortalUI.cs" />
+    <Compile Include="Helpers\DataGen.cs" />
+    <Compile Include="Helpers\JavascriptExecutor.cs" />
+    <Compile Include="Helpers\RetriableRunner.cs" />
+    <Compile Include="Helpers\Store.cs" />
+    <Compile Include="Helpers\UserAccount.cs" />
+    <Compile Include="Pages\BasePages\ActivityDetails.cs" />
+    <Compile Include="Pages\BasePages\ActivityNotification.cs" />
+    <Compile Include="Pages\BasePages\ActivityPopup.cs" />
+    <Compile Include="Pages\BasePages\ChooserPopup.cs" />
+    <Compile Include="Pages\BasePages\CommandWindow.cs" />
+    <Compile Include="Pages\BasePages\CustomAttributeDefinitionPopup.cs" />
+    <Compile Include="Pages\BasePages\DataTypeCenter\ChoosersTab.cs" />
+    <Compile Include="Pages\BasePages\DataTypeCenter\DataTab.cs" />
+    <Compile Include="Pages\BasePages\DataTypeCenter\DataTypeCenter.cs" />
+    <Compile Include="Pages\BasePages\DataTypeCenter\PropertiesTab.cs" />
+    <Compile Include="Pages\BasePages\DataTypeCenter\ViewsTab.cs" />
+    <Compile Include="Pages\BasePages\EditPageLayoutPopup.cs" />
+    <Compile Include="Pages\BasePages\EditStandardViewProperties.cs" />
+    <Compile Include="Pages\BasePages\EmailConfiguration.cs" />
+    <Compile Include="Pages\BasePages\EntityChooserFieldPopup.cs" />
+    <Compile Include="Pages\BasePages\EntityChooserPopup.cs" />
+    <Compile Include="Pages\BasePages\EntityDataPopup.cs" />
+    <Compile Include="Pages\BasePages\EntityViewEditorPopup.cs" />
+    <Compile Include="Pages\BasePages\ICustomAttributesTable.cs" />
+    <Compile Include="Pages\BasePages\LayoutInitialBasedPage.cs" />
+    <Compile Include="Pages\BasePages\LoginConfirmationDialog.cs" />
+    <Compile Include="Pages\BasePages\LoginPage.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\ActivitiesTab.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\ProjectType.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\ProjectTypeCenterPage.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\PropertiesTab.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\ReviewerNotesTab.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\SearchIndexingTab.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\SmartFormTab.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\StatesTab.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\StateTransitionsTab.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\TemplatesTab.cs" />
+    <Compile Include="Pages\BasePages\ProjectTypeCenter\ViewsTab.cs" />
+    <Compile Include="Pages\BasePages\ReviewerNotePopup.cs" />
+    <Compile Include="Pages\BasePages\RMConsole.cs" />
+    <Compile Include="Pages\BasePages\RuleLogicPage.cs" />
+    <Compile Include="Pages\BasePages\RulesAdminPagecs.cs" />
+    <Compile Include="Pages\BasePages\RulesEditorPage.cs" />
+    <Compile Include="Pages\BasePages\SavedSearchEditor.cs" />
+    <Compile Include="Pages\BasePages\ScheduledBackgroundOperations\ActivityNodePopup.cs" />
+    <Compile Include="Pages\BasePages\ScheduledBackgroundOperations\Details.cs" />
+    <Compile Include="Pages\BasePages\ScheduledBackgroundOperations\Main.cs" />
+    <Compile Include="Pages\BasePages\ScheduledBackgroundOperations\ScheduleDetailsPopup.cs" />
+    <Compile Include="Pages\BasePages\SelectPropertyModalPopup.cs" />
+    <Compile Include="Pages\BasePages\SmartFormPage.cs" />
+    <Compile Include="Pages\BasePages\VersionInformation.cs" />
+    <Compile Include="Pages\BasePages\ViewChooserPopup.cs" />
+    <Compile Include="Pages\BasePages\WorkflowScriptEditor.cs" />
+    <Compile Include="Pages\CCPage.cs" />
+    <Compile Include="Pages\Components\ContentSearchComponent.cs" />
+    <Compile Include="Pages\Components\CustomSearchComponent.cs" />
+    <Compile Include="Pages\Components\IDynamicResultSetView.cs" />
+    <Compile Include="Pages\Components\ProjectLogComponent.cs" />
+    <Compile Include="Pages\Components\ProjectListingComponent.cs" />
+    <Compile Include="Pages\Components\ReviewerNotesComponent.cs" />
+    <Compile Include="Pages\Components\RoomComponent.cs" />
+    <Compile Include="Pages\SelectPropertyPopup.cs" />
+    <Compile Include="PrimitiveElements\Button.cs" />
+    <Compile Include="PrimitiveElements\CCElement.cs" />
+    <Compile Include="PrimitiveElements\Checkbox.cs" />
+    <Compile Include="PrimitiveElements\Container.cs" />
+    <Compile Include="EntityViewControls\DataEntryCdtAddDataPopup.cs" />
+    <Compile Include="EntityViewControls\SetOfCdtEntities.cs" />
+    <Compile Include="EntityViewControls\SetOfDataEntryCdtEntityViewControl.cs" />
+    <Compile Include="Helpers\Wait.cs" />
+    <Compile Include="PrimitiveElements\Image.cs" />
+    <Compile Include="Pages\IPopup.cs" />
+    <Compile Include="PrimitiveElements\Link.cs" />
+    <Compile Include="PrimitiveElements\PageElement.cs" />
+    <Compile Include="Pages\PopupWindow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PrimitiveElements\Radio.cs" />
+    <Compile Include="PrimitiveElements\Select.cs" />
+    <Compile Include="PrimitiveElements\TextBox.cs" />
+    <Compile Include="Web.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtilities\CommonUtilities.csproj">
+      <Project>{B1149146-344D-4633-981C-D3FD08AB671D}</Project>
+      <Name>CommonUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
