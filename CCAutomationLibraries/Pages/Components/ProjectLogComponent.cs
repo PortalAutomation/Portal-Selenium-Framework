@@ -1,7 +1,7 @@
 ﻿using System;
-using CCWebUIAuto.PrimitiveElements;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.Components
+namespace PortalSeleniumFramework.Pages.Components
 {
 	public class ProjectLogComponent : RoomComponent, IDynamicResultSetView
 	{

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.DataTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.DataTypeCenter
 {
 	public class PropertiesTab : CCPage, ICustomAttributesTable
 	{

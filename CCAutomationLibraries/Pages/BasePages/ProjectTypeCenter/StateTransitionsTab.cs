@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.ProjectTypeCenter
 {
 	public class StateTransitionsTab : CCPage
 	{
@@ -64,7 +64,7 @@ namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
 			var row = GetRow(getLastRow: true);
 			row.ChkBox.Click();
 			BtnDelete.Click();
-			var alert = Web.Driver.SwitchTo().Alert();
+			var alert = Web.PortalDriver.SwitchTo().Alert();
 			alert.Accept();
 			ClickPortalUI.Wait.Until(d => new Container(By.XPath("//td[contains(@class, 'SuccessArea')]")).Exists);
 		}

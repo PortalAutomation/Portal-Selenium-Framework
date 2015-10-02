@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
     public class RMConsole : CCPage
     {
@@ -101,14 +101,14 @@ namespace CCWebUIAuto.Pages.BasePages
         /// <returns></returns>
         public bool PersonExists(string lastName)
         {
-            Web.Driver.SwitchTo().Frame("ifrmResults");
+            Web.PortalDriver.SwitchTo().Frame("ifrmResults");
             Link result = new Link(By.PartialLinkText(lastName));
             return result.Exists;
         }
 
         public void SwitchToFrame()
         {
-            Web.Driver.SwitchTo().Frame("sidebar");
+            Web.PortalDriver.SwitchTo().Frame("sidebar");
         }
 
     }

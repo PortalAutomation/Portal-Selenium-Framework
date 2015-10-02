@@ -1,8 +1,8 @@
-﻿using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
     public class VersionInformation : PageElement
     {

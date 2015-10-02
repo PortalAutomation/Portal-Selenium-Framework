@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.DataTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.DataTypeCenter
 {
 	public class ChoosersTab : CCPage
 	{
@@ -63,7 +63,7 @@ namespace CCWebUIAuto.Pages.BasePages.DataTypeCenter
 			Trace.WriteLine(String.Format("Deleting chooser '{0}'", chooserName));
 			SelectChooser(chooserName);
 			DeleteButton.Click();
-			var alert = Web.Driver.SwitchTo().Alert();
+			var alert = Web.PortalDriver.SwitchTo().Alert();
 			alert.Accept();
 			Wait.Until(d => !new Link(By.LinkText(chooserName)).Exists);
 		}

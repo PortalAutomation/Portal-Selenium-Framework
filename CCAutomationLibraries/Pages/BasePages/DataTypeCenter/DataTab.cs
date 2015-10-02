@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.DataTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.DataTypeCenter
 {
 	public class DataTab : CCPage
 	{
@@ -70,7 +70,7 @@ namespace CCWebUIAuto.Pages.BasePages.DataTypeCenter
 			Trace.WriteLine(String.Format("Deleting entity data '{0}'", name));
 			SelectEntityRow(name);
 			DeleteButton.Click();
-			var alert = Web.Driver.SwitchTo().Alert();
+			var alert = Web.PortalDriver.SwitchTo().Alert();
 			alert.Accept();
 			Wait.Until(d => !DataTableDiv.Text.Contains(name));
 		}

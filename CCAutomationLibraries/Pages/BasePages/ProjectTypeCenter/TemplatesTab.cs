@@ -1,9 +1,9 @@
 ﻿using System;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.ProjectTypeCenter
 {
 	public class TemplatesTab : CCPage
 	{
@@ -77,7 +77,7 @@ namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
 			var checkbox = new Checkbox(By.XPath("//a[text()='" + templateName + "']/../../td[1]/input[@type='checkbox']"));
 			checkbox.Checked = true;
 			BtnDelete.Click();
-			var alert = Web.Driver.SwitchTo().Alert();
+			var alert = Web.PortalDriver.SwitchTo().Alert();
 			alert.Accept();
 			var link = new Link(By.LinkText(templateName));
 			ClickPortalUI.Wait.Until(d => !link.Exists);

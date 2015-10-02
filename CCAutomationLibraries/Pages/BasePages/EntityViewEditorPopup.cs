@@ -1,8 +1,8 @@
 ﻿using System;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
 	/// <summary>
 	/// This class represents the popup window for creating new entity views

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using CCWebUIAuto.Helpers;
+using PortalSeleniumFramework.Helpers;
 
-namespace CCWebUIAuto.Pages
+namespace PortalSeleniumFramework.Pages
 {
 	public interface IPopup
 	{
@@ -15,7 +15,7 @@ namespace CCWebUIAuto.Pages
 
 		public static void SwitchTo(this IPopup popup, bool partialMatch = false)
 		{
-			ParentWindowTitles[popup] = Web.Driver.Title;
+			ParentWindowTitles[popup] = Web.PortalDriver.Title;
             if (partialMatch)
 		    {
 		        PopUpWindow.SwitchTo(popup.Title, true);

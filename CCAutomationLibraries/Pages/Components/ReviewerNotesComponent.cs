@@ -1,10 +1,10 @@
 ﻿using System;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.Pages.BasePages;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.Pages.BasePages;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.Components
+namespace PortalSeleniumFramework.Pages.Components
 {
 	public class ReviewerNotesComponent : RoomComponent, IDynamicResultSetView
 	{

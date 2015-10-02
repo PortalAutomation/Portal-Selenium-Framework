@@ -7,8 +7,8 @@
     <ProjectGuid>{3D413901-AC9E-4425-983F-9A65E074F930}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CCWebUIAuto</RootNamespace>
-    <AssemblyName>CCWebUIAuto</AssemblyName>
+    <RootNamespace>PortalSeleniumFramework</RootNamespace>
+    <AssemblyName>PortalSeleniumFramework</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\shared\</OutputPath>
+    <OutputPath>..\shared\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

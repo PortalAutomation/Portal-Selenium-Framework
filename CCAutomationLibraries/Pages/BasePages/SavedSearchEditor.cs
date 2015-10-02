@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
 	// There are several different popups that are based on the custom search editor, so the
 	// popup classes for each should inherit from SavedSearchEditorBase, then expose or add

@@ -1,8 +1,8 @@
 ﻿using System;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.Pages;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.Pages;
 
-namespace CCWebUIAuto.EntityViewControls
+namespace PortalSeleniumFramework.EntityViewControls
 {
 	public class SetOfDataEntryCdtEntityViewControl : SetOfCdtEntities
 	{

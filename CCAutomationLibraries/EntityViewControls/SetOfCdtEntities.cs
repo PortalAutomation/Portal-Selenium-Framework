@@ -1,8 +1,8 @@
 ﻿using System;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.EntityViewControls
+namespace PortalSeleniumFramework.EntityViewControls
 {
 	public abstract class SetOfCdtEntities
 	{

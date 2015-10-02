@@ -4,7 +4,7 @@ using System.Linq;
 using CommonUtilities;
 using OpenQA.Selenium.Support.UI;
 
-namespace CCWebUIAuto.Helpers
+namespace PortalSeleniumFramework.Helpers
 {
 	public static class ClickPortalUI
 	{
@@ -46,7 +46,7 @@ namespace CCWebUIAuto.Helpers
 			Store.BaseUrl = String.Format("{0}", AutoConfig["WebServer"]);
 			Store.CurrentUser = null;
 
-			Wait = new WebDriverWait(Web.Driver, TimeSpan.FromSeconds(7));
+			Wait = new WebDriverWait(Web.PortalDriver, TimeSpan.FromSeconds(7));
 		}
 	}
 }

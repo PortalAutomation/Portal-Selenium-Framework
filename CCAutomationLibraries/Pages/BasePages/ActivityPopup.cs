@@ -1,8 +1,8 @@
 ﻿using System;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
 	public class ActivityPopup : IPopup
 	{
@@ -32,8 +32,8 @@ namespace CCWebUIAuto.Pages.BasePages
         /// <param name="pswd"></param>
 	    public void ConfirmCredentials(string user, string pswd)
 	    {
-            //Web.Driver.SwitchTo().Frame(Web.Driver.FindElement(By.Id("GB_frame_confirmLoginMsg")));
-            Web.Driver.SwitchTo().Frame("GB_frame_confirmLoginMsg");
+            //Web.PortalDriver.SwitchTo().Frame(Web.PortalDriver.FindElement(By.Id("GB_frame_confirmLoginMsg")));
+            Web.PortalDriver.SwitchTo().Frame("GB_frame_confirmLoginMsg");
 	        UserId.Value = user;
 	        UserPassword.Value = pswd;
             this.BtnSubmit.Click();

@@ -1,9 +1,9 @@
 ﻿using System;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.ProjectTypeCenter
 {
 	public class ReviewerNotesTab : CCPage
 	{
@@ -61,7 +61,7 @@ namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
 			var checkbox = new Checkbox(By.XPath("//a[text()='" + reviewNoteName + "']/../../td[1]/input[@type='checkbox']"));
 			checkbox.Checked = true;
 			BtnDeleteNoteType.Click();
-			Web.Driver.SwitchTo().Alert().Accept();
+			Web.PortalDriver.SwitchTo().Alert().Accept();
 			Wait.Until(d => !new Container(By.LinkText(reviewNoteName)).Exists);
 		}
 
@@ -94,7 +94,7 @@ namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
 				responseTypeName + "']/../../td[1]/input[@type='checkbox']"));
 			checkbox.Checked = true;
 			BtnDeleteResponseType.Click();
-			Web.Driver.SwitchTo().Alert().Accept();
+			Web.PortalDriver.SwitchTo().Alert().Accept();
 			Wait.Until(d => !new Link(By.LinkText(responseTypeName)).Exists);
 		}
 

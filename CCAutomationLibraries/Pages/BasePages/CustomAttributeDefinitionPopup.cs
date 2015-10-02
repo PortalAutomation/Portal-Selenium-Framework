@@ -1,7 +1,7 @@
-﻿using CCWebUIAuto.PrimitiveElements;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
 	public class CustomAttributeDefinitionPopup : IPopup
 	{

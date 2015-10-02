@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.ProjectTypeCenter
 {
 	public class ActivitiesTab : CCPage
 	{
@@ -49,7 +49,7 @@ namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
 			page.BtnOk.Click();
 			try {
 				// The alert is in case a badly formed internal name
-				var alert = Web.Driver.SwitchTo().Alert();
+				var alert = Web.PortalDriver.SwitchTo().Alert();
 				if (acceptSanitizedInternalName) {
 					alert.Accept();
 				} else {
@@ -99,7 +99,7 @@ namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
 			Trace.WriteLine(String.Format("Deleting row {0} from activity table", name));
 			CheckTableRow(name);
 			BtnDelete.Click();
-			var alert = Web.Driver.SwitchTo().Alert();
+			var alert = Web.PortalDriver.SwitchTo().Alert();
 			alert.Accept();
 		}
 

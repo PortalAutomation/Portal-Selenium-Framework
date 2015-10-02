@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.ProjectTypeCenter
 {
 	public class StatesTab : CCPage
 	{
@@ -96,7 +96,7 @@ namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
 			Trace.WriteLine(String.Format("Deleting row {0} from states table", stateName));
 			CheckViewTableRow(stateName);
 			BtnDelete.Click();
-			var alert = Web.Driver.SwitchTo().Alert();
+			var alert = Web.PortalDriver.SwitchTo().Alert();
 			alert.Accept();
 			Wait.Until(d => !new Link(By.LinkText(stateName)).Exists);
 		}

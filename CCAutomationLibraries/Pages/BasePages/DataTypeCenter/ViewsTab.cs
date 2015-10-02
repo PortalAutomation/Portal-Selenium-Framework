@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.DataTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.DataTypeCenter
 {
 	public class ViewsTab : CCPage
 	{
@@ -55,7 +55,7 @@ namespace CCWebUIAuto.Pages.BasePages.DataTypeCenter
 			Trace.WriteLine(String.Format("Deleting row {0} from view table", viewName));
 			CheckViewTableRow(viewName);
 			BtnDeleteButton.Click();
-			var alert = Web.Driver.SwitchTo().Alert();
+			var alert = Web.PortalDriver.SwitchTo().Alert();
 			alert.Accept();
 			Wait.Until(d => !ViewExists(viewName));
 		}

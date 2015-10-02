@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using CCWebUIAuto.Helpers;
 using ClickPortal.PortalDriver;
 using CommonUtilities;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using PortalSeleniumFramework.Helpers;
 
-namespace CCWebUIAuto
+namespace PortalSeleniumFramework
 {
 
 	/// <summary>
@@ -18,12 +18,12 @@ namespace CCWebUIAuto
 	public static class Web
 	{
 		public static Browsers CurrentBrowser = Browsers.Default;
-		public static PortalDriver Driver;
+		public static PortalDriver PortalDriver;
 
 		public static void Maximize()
 		{
 			Trace.WriteLine(String.Format("Maximizing browser window."));
-			Driver.Manage().Window.Maximize();
+			PortalDriver.Manage().Window.Maximize();
 		}
 
 		/// <summary>
@@ -33,7 +33,7 @@ namespace CCWebUIAuto
 		public static void Navigate(string url)
 		{
 			Trace.WriteLine(String.Format("Navigating to URL '{0}'", url));
-			Driver.Navigate().GoToUrl(url);
+			PortalDriver.Navigate().GoToUrl(url);
 		}
 
 		/// <summary>
@@ -45,13 +45,13 @@ namespace CCWebUIAuto
 			Trace.WriteLine(String.Format("Navigating: '{0}'", navType.ToString()));
 			switch (navType) {
 			case NavigateType.Back:
-				Driver.Navigate().Back();
+				PortalDriver.Navigate().Back();
 				break;
 			case NavigateType.Forward:
-				Driver.Navigate().Forward();
+				PortalDriver.Navigate().Forward();
 				break;
 			case NavigateType.Refresh:
-				Driver.Navigate().Refresh();
+				PortalDriver.Navigate().Refresh();
 				break;
 			}
 		}
@@ -84,7 +84,7 @@ namespace CCWebUIAuto
 		/// <param name="fileName">Filename of the saved screenshot.</param>
 		public static void TakeScreenShot(string fileName)
 		{
-			var screen = ((ITakesScreenshot) Driver).GetScreenshot();
+			var screen = ((ITakesScreenshot) PortalDriver).GetScreenshot();
 			// I'm not sure what resharper is going on about here, not sure where the assignment is happening?
 			// ReSharper disable AssignNullToNotNullAttribute
 			if (!Directory.Exists(Path.GetDirectoryName(fileName))) {
@@ -96,7 +96,7 @@ namespace CCWebUIAuto
 
 		public static void Close()
 		{
-			Driver.Close();
+			PortalDriver.Close();
 		}
 
 		/// <summary>
@@ -141,7 +141,7 @@ namespace CCWebUIAuto
             {
                 case Browsers.Chrome:
                     IWebDriver chromeDriver = new ChromeDriver();
-                    Driver = new PortalDriver(null, chromeDriver);
+                    PortalDriver = new PortalDriver(null, chromeDriver);
                     break;
                 case Browsers.IE:
                     var options = new InternetExplorerOptions
@@ -152,13 +152,13 @@ namespace CCWebUIAuto
                     };
                     //options.BrowserCommandLineArguments = "-private";
                     IWebDriver ieDriver = new InternetExplorerDriver(options);
-                    Driver = new PortalDriver(null, ieDriver);
+                    PortalDriver = new PortalDriver(null, ieDriver);
                     break;
                 case Browsers.Firefox:
                 case Browsers.Default:
                     var profile = new FirefoxProfile { AcceptUntrustedCertificates = true };
                     IWebDriver ffDriver = new FirefoxDriver(new FirefoxBinary(), profile, TimeSpan.FromMinutes(3));
-                    Driver = new PortalDriver(null,ffDriver);
+                    PortalDriver = new PortalDriver(null,ffDriver);
                     break;
                 default:
                     Debug.Assert(false, "new browser enum value added... need to add a case here");

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
-using CCWebUIAuto.Helpers;
 using CommonUtilities;
 using OpenQA.Selenium.Support.UI;
+using PortalSeleniumFramework.Helpers;
 
-namespace CCWebUIAuto.Pages
+namespace PortalSeleniumFramework.Pages
 {
     public static class PopUpWindow
     {
@@ -21,21 +21,21 @@ namespace CCWebUIAuto.Pages
         {
             RetriableRunner.Run(() =>
             {
-                var handles = Web.Driver.WindowHandles;
+                var handles = Web.PortalDriver.WindowHandles;
 
 				try {
 					var handle = partialMatch
-					? handles.First(h => Web.Driver.SwitchTo().Window(h).Title.Contains(windowTitle))
-					: handles.First(h => Web.Driver.SwitchTo().Window(h).Title == windowTitle);
-					Web.Driver.SwitchTo().Window(handle);
+					? handles.First(h => Web.PortalDriver.SwitchTo().Window(h).Title.Contains(windowTitle))
+					: handles.First(h => Web.PortalDriver.SwitchTo().Window(h).Title == windowTitle);
+					Web.PortalDriver.SwitchTo().Window(handle);
 				} catch (Exception) {
-					var windowTitles = handles.Select(h => Web.Driver.SwitchTo().Window(h).Title);
+					var windowTitles = handles.Select(h => Web.PortalDriver.SwitchTo().Window(h).Title);
 					var titleList = String.Join(",", windowTitles);
 					Trace.WriteLine("unable to find '" + windowTitle + "'");
 					Trace.WriteLine("available windows: [" + titleList + "]");
 					throw;
 				}
-				var wait = new WebDriverWait(Web.Driver, TimeSpan.FromSeconds(10));
+				var wait = new WebDriverWait(Web.PortalDriver, TimeSpan.FromSeconds(10));
                 try
                 {
                     wait.Until(ExpectedConditions.TitleContains(windowTitle));
@@ -49,22 +49,22 @@ namespace CCWebUIAuto.Pages
 
         public static void SwitchToByHandle(string handle)
         {
-			Web.Driver.SwitchTo().Window(handle);
+			Web.PortalDriver.SwitchTo().Window(handle);
         }
 
         public static bool WindowTitleExists(string windowTitle)
         {
-			return (Web.Driver.Title == windowTitle);
+			return (Web.PortalDriver.Title == windowTitle);
         }
 
         public static void Close()
         {
             // close the current window
-			Web.Driver.Close();
+			Web.PortalDriver.Close();
             // switch focus back to parentWindow
             if (ParentWindowHandle != null || ParentWindowHandle != "")
             {
-				Web.Driver.SwitchTo().Window(ParentWindowHandle);
+				Web.PortalDriver.SwitchTo().Window(ParentWindowHandle);
             }
         }
 
@@ -74,10 +74,10 @@ namespace CCWebUIAuto.Pages
             var count = 0;
             RetriableRunner.Run(() =>
             {
-				var handles = Web.Driver.WindowHandles;
+				var handles = Web.PortalDriver.WindowHandles;
                 count = partialMatch
-					? handles.Count(h => Web.Driver.SwitchTo().Window(h).Title.Contains(windowTitle))
-					: handles.Count(h => Web.Driver.SwitchTo().Window(h).Title == windowTitle);
+					? handles.Count(h => Web.PortalDriver.SwitchTo().Window(h).Title.Contains(windowTitle))
+					: handles.Count(h => Web.PortalDriver.SwitchTo().Window(h).Title == windowTitle);
             });
             SwitchTo(currentWindow);
             return count > 0;
@@ -128,7 +128,7 @@ namespace CCWebUIAuto.Pages
         {
             // get currentWindowHandles, put it in a temporary hashset
 
-			var currentHandles = Web.Driver.WindowHandles;
+			var currentHandles = Web.PortalDriver.WindowHandles;
             try
             {
                 foreach (string handle in currentHandles)
@@ -203,7 +203,7 @@ namespace CCWebUIAuto.Pages
         {
             // clear, and replace the base handle set with the current handles
             BaseHandleSet.Clear();
-			var currentHandles = Web.Driver.WindowHandles;
+			var currentHandles = Web.PortalDriver.WindowHandles;
             foreach (string handle in currentHandles)
             {
                 BaseHandleSet.Add(handle);

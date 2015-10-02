@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.ProjectTypeCenter
 {
 	public class SmartFormTabManageSteps : CCPage
 	{
@@ -85,7 +85,7 @@ namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
 						 "'])[1]/../../td[1]/input[@type='checkbox']"));
 			chkStep.Checked = true;
 			BtnDelete.Click();
-			Web.Driver.SwitchTo().Alert().Accept();
+			Web.PortalDriver.SwitchTo().Alert().Accept();
 			Wait.Until(d => !new Link(By.LinkText(name)).Exists);
 		}
 
@@ -292,7 +292,7 @@ namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
 			var checkbox = new Checkbox(By.XPath("//a[text()='" + sectionName + "']/../../td[1]/input[@type='checkbox']"));
 			checkbox.Checked = true;
 			BtnDelete.Click();
-			var alert = Web.Driver.SwitchTo().Alert();
+			var alert = Web.PortalDriver.SwitchTo().Alert();
 			alert.Accept();
 			Wait.Until(d => !new Link(By.LinkText(sectionName)).Exists);
 		}

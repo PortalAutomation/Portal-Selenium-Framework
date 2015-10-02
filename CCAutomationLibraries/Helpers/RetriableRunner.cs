@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 
-namespace CCWebUIAuto.Helpers
+namespace PortalSeleniumFramework.Helpers
 {
 	public static class RetriableRunner
 	{

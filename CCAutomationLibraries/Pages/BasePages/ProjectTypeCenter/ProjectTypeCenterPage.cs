@@ -1,8 +1,8 @@
-﻿using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
+namespace PortalSeleniumFramework.Pages.BasePages.ProjectTypeCenter
 {
 	public class ProjectTypeCenterPage : CCPage
 	{
@@ -34,7 +34,7 @@ namespace CCWebUIAuto.Pages.BasePages.ProjectTypeCenter
 		public void OpenProject(string name)
 		{
 			// Verify element exists on page before
-			var tableLink = Web.Driver.FindElement(By.LinkText(name));
+			var tableLink = Web.PortalDriver.FindElement(By.LinkText(name));
 			tableLink.Click();
 		}
 

@@ -4,7 +4,7 @@ using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace CCWebUIAuto.PrimitiveElements
+namespace PortalSeleniumFramework.PrimitiveElements
 {
 	public class Select : PageElement
 	{

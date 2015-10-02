@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
-using CCWebUIAuto.Helpers;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
 
-namespace CCWebUIAuto.Pages
+namespace PortalSeleniumFramework.Pages
 {
 	/// <summary>
 	/// Container class for all elements
@@ -58,14 +58,14 @@ namespace CCWebUIAuto.Pages
 		/// <returns></returns>
 		public string GetTitle()
 		{
-			return Web.Driver.Title;
+			return Web.PortalDriver.Title;
 		}
 
 		public static string CurrentWindowTitle
 		{
 			get
 			{
-				return Web.Driver.Title;
+				return Web.PortalDriver.Title;
 			}
 		}
 

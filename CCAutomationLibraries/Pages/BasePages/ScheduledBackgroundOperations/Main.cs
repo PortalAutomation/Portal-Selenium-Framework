@@ -1,9 +1,9 @@
 ﻿using System;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages.ScheduledBackgroundOperations
+namespace PortalSeleniumFramework.Pages.BasePages.ScheduledBackgroundOperations
 {
 	public class Main : CCPage
 	{

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
 	public class SelectPropertyPopup : IPopup
 	{
@@ -32,8 +32,8 @@ namespace CCWebUIAuto.Pages.BasePages
 		public void SelectProperty(string name)
 		{
 			// Switch to the frame within this popup dialog
-			Web.Driver.SwitchTo()
-				.Frame(Web.Driver.FindElement(By.Id("ifrmAttributeTable")));
+			Web.PortalDriver.SwitchTo()
+				.Frame(Web.PortalDriver.FindElement(By.Id("ifrmAttributeTable")));
 			Wait.Until(d => new Container(By.Id("spanAttributeName")).Exists);
 
 			var parsedName = name.Split('.');
@@ -47,7 +47,7 @@ namespace CCWebUIAuto.Pages.BasePages
 
 			var property = new Container(By.XPath(String.Format("//*[@id='spanQualifiedAttributeDisplayName' and text()='{0}']/../span", name)));
 			property.Click();
-			Web.Driver.SwitchTo().DefaultContent();
+			Web.PortalDriver.SwitchTo().DefaultContent();
 		}
 
 		public enum AllowMultiSelect { Yes, No }

@@ -4,12 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
-using CCWebUIAuto.PrimitiveElements;
 using CommonUtilities;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Helpers
+namespace PortalSeleniumFramework.Helpers
 {
   public class BaseTest
     {
@@ -38,7 +38,7 @@ namespace CCWebUIAuto.Helpers
             try
             {
                 Trace.WriteLine("Closing browser.");
-                Web.Driver.Quit();
+                Web.PortalDriver.Quit();
             }
             catch (Exception ex)
             {
@@ -63,13 +63,13 @@ namespace CCWebUIAuto.Helpers
 
 		public void AcceptAlert()
 		{
-			RetriableRunner.Run(() => Web.Driver.SwitchTo().Alert().Accept());
+			RetriableRunner.Run(() => Web.PortalDriver.SwitchTo().Alert().Accept());
 		}
 
 		public void AcceptAlert(String alertText)
 		{
 			RetriableRunner.Run(() => {
-				var alert = Web.Driver.SwitchTo().Alert();
+				var alert = Web.PortalDriver.SwitchTo().Alert();
 				Assert.AreEqual(alertText, alert.Text);
 				alert.Accept();	
 			});
@@ -77,9 +77,9 @@ namespace CCWebUIAuto.Helpers
 
 		public void SwitchToMostRecentWindow()
 		{
-			var handles = Web.Driver.WindowHandles;
+			var handles = Web.PortalDriver.WindowHandles;
 			var handle = handles.Last();
-			Web.Driver.SwitchTo().Window(handle);
+			Web.PortalDriver.SwitchTo().Window(handle);
 		}
     }
 }

@@ -1,15 +1,15 @@
-﻿using CCWebUIAuto.Pages.BasePages;
-using CCWebUIAuto.PrimitiveElements;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using PortalSeleniumFramework.Pages.BasePages;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Helpers
+namespace PortalSeleniumFramework.Helpers
 {
 	public class Store
 	{
 		public static string BaseUrl;
 		public static UserAccount CurrentUser;
 
-		public static string CurrentPageSource { get { return Web.Driver.PageSource; } }
+		public static string CurrentPageSource { get { return Web.PortalDriver.PageSource; } }
 
 		// This does two things
 		// -logs us in and out of the store

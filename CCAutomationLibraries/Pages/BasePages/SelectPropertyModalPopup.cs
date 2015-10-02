@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
 	public class SelectPropertyModalPopup : IPopup
 	{
@@ -32,15 +32,15 @@ namespace CCWebUIAuto.Pages.BasePages
 
 		public void SelectProperty(string name, Button openPopupWithThis)
 		{
-			var parentWindow = Web.Driver.Title;
+			var parentWindow = Web.PortalDriver.Title;
 			Wait.Until(d => openPopupWithThis.Exists);
 			openPopupWithThis.AsyncClick();
 			Thread.Sleep(2000);
 			PopUpWindow.SwitchTo(Title);
 
 			// Switch to the frame within this popup dialog
-			Web.Driver.SwitchTo()
-				.Frame(Web.Driver.FindElement(By.Id("ifrmAttributeTable")));
+			Web.PortalDriver.SwitchTo()
+				.Frame(Web.PortalDriver.FindElement(By.Id("ifrmAttributeTable")));
 			Wait.Until(d => new Container(By.Id("spanAttributeName")).Exists);
 
 			var parsedName = name.Split('.');

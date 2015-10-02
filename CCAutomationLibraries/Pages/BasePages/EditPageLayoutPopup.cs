@@ -1,10 +1,10 @@
 ﻿using System;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.Pages.Components;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.Pages.Components;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
 	public class EditPageLayoutPopup : IPopup
 	{

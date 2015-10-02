@@ -1,8 +1,8 @@
 ﻿using System;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
 	public class LoginConfirmationDialog
 	{
@@ -15,7 +15,7 @@ namespace CCWebUIAuto.Pages.BasePages
 		public void SubmitCredentials(string username, string password)
 		{
 			// switch into Frame "GB_frame_confirmLoginMsg"
-			Web.Driver.SwitchTo().Frame(Web.Driver.FindElement(By.Id("GB_frame_confirmLoginMsg")));
+			Web.PortalDriver.SwitchTo().Frame(Web.PortalDriver.FindElement(By.Id("GB_frame_confirmLoginMsg")));
 			TxtUserName.Value = "administrator";
 			TxtPassword.Value = "1234";
 			BtnSubmit.Click();

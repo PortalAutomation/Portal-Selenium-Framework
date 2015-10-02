@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using OpenQA.Selenium;
 
-namespace CCWebUIAuto.PrimitiveElements
+namespace PortalSeleniumFramework.PrimitiveElements
 {
 	public class Button : PageElement
 	{

@@ -5,10 +5,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using CCWebUIAuto.Helpers;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
 
-namespace CCWebUIAuto.PrimitiveElements
+namespace PortalSeleniumFramework.PrimitiveElements
 {
     /// <summary>
     /// This class holds extensions for webdriver element types (i.e. textboxes, links, containers, etc) as well
@@ -193,7 +193,7 @@ namespace CCWebUIAuto.PrimitiveElements
                 {
                     RetriableRunner.Run(() =>
                     {
-						Web.Driver.FindElement(CCByLocator);
+						Web.PortalDriver.FindElement(CCByLocator);
                     }, 3);
                 }
                 catch (Exception)
@@ -456,7 +456,7 @@ namespace CCWebUIAuto.PrimitiveElements
                 return RetriableRunner.Run(() =>
                 {
                     Trace.WriteLine("... " + CCByLocator);
-					webElement = Web.Driver.FindElement(CCByLocator);
+					webElement = Web.PortalDriver.FindElement(CCByLocator);
                     ElementIdentifier = webElement.TagName;
                     return webElement != null;
                 });

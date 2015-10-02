@@ -1,9 +1,9 @@
 ﻿using System;
-using CCWebUIAuto.Pages;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Pages;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.EntityViewControls
+namespace PortalSeleniumFramework.EntityViewControls
 {
 	public abstract class DataEntryCdtAddDataPopup : IPopup
 	{

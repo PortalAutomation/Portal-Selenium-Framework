@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace CCWebUIAuto.Helpers
+namespace PortalSeleniumFramework.Helpers
 {
 	// since we will have a need to randomly generate data, I created this to hold
 	// methods for that purpose.  This will get expanded to generate numbers, paragraphs,

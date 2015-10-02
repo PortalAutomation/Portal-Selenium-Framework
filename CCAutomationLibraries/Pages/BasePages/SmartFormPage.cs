@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading;
-using CCWebUIAuto.Helpers;
-using CCWebUIAuto.PrimitiveElements;
 using OpenQA.Selenium;
+using PortalSeleniumFramework.Helpers;
+using PortalSeleniumFramework.PrimitiveElements;
 
-namespace CCWebUIAuto.Pages.BasePages
+namespace PortalSeleniumFramework.Pages.BasePages
 {
 	public class SmartFormPage : CCPage
 	{
@@ -58,7 +58,7 @@ namespace CCWebUIAuto.Pages.BasePages
 	        {
                 bool returnValue = false;
                 sf.BtnHideShowErrors.Click();
-                Web.Driver.SwitchTo().Frame("validationErrors");
+                Web.PortalDriver.SwitchTo().Frame("validationErrors");
                 // use the field name as the anchor
                 Container FieldContainer = new Container(By.XPath(".//td[text()='" + field + "']"));
                 Container MessageContainer = new Container(By.XPath(".//td[text()='" + field + "']/../td[2][text()='" + messageName + "']"));

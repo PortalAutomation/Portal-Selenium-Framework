@@ -3,11 +3,11 @@ using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace CCWebUIAuto.Helpers
+namespace PortalSeleniumFramework.Helpers
 {
 	public static class Wait
 	{
-		private readonly static WebDriverWait Pause = new WebDriverWait(Web.Driver, TimeSpan.FromSeconds(7));
+		private readonly static WebDriverWait Pause = new WebDriverWait(Web.PortalDriver, TimeSpan.FromSeconds(7));
 
 		public static void Until(Func<IWebDriver, bool> func)
 		{
